@@ -1,10 +1,10 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL:import.meta.env.REACT_APP_API_URL || 'http://localhost:5000/api',
+  baseURL:import.meta.env.VITE_API_URL || 'http://localhost:5000/api',
   timeout: 15000,
 });
-console.log("api",import.meta.env.REACT_APP_API_URL || 'http://localhost:5000/api')
+console.log("api",import.meta.env.VITE_API_URL || 'http://localhost:5000/api')
 export const getArticles = (params) => api.get('/articles', { params });
 export const getArticleStats = () => api.get('/articles/stats');
 export const getSentimentTimeline = (days) => api.get('/articles/sentiment-timeline', { params: { days } });
